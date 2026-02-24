@@ -1,0 +1,46 @@
+"use client";
+
+import {
+  useEffect,
+  type MouseEventHandler,
+  type PropsWithChildren,
+} from "react";
+import { useDisclosure, useMediaQuery } from "@/hooks";
+import { ModalBurgerDrawer } from "@/components/ui";
+import { MenuButton } from "../MenuButton";
+import { Container } from "./HeaderMenu.styled";
+
+export function HeaderMenu({ children }: PropsWithChildren) {
+  const { isOpen, open, close, toggle } = useDisclosure(false);
+
+  const isHideBurger = useMediaQuery(861);
+
+  const handleClick: MouseEventHandler<HTMLElement> = (event) => {
+    const target = event.target as HTMLElement;
+
+    if (isOpen && target.closest(".header-navigation__link")) {
+      close();
+    }
+  };
+
+  function handleClickMenuButton() {
+    window.scrollTo(0, 0);
+    toggle();
+  }
+
+  useEffect(() => {
+    if (isHideBurger) {
+      close();
+    }
+  }, [isHideBurger]);
+
+  return (
+    <Container onClick={handleClick}>
+      <ModalBurgerDrawer open={isOpen} onClose={() => close()}>
+        {children}
+      </ModalBurgerDrawer>
+      <MenuButton open={isOpen} onClick={handleClickMenuButton} />
+    </Container>
+  );
+}
+

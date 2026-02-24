@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>page content</div>;
+  return <div style={{background: '#F1F1F1', flexGrow: 1}}>page content</div>;
 }

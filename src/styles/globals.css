@@ -1,0 +1,28 @@
+:root {
+  --container-max-width: 1240px;
+  --container-margin: 9.7rem;
+
+  --modal-background: #f9f9f9;
+
+  --modal--burger-overlay-index: 2;
+  --modal--burger-content-index: 3;
+  --menu-button-index: 4;
+  --modal-overlay-index: 7;
+  --modal-content-index: 10;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #141416;
+  background-color: #f9f9f9;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
