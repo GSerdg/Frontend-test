@@ -1,20 +1,4 @@
 import styled from "styled-components";
-import { Drawer } from "vaul";
-
-export const Overlay = styled(Drawer.Overlay)`
-  position: fixed;
-  inset: 0;
-  background-color: #00000066;
-  z-index: var(--modal--burger-overlay-index);
-`;
-
-export const Content = styled(Drawer.Content)`
-  display: flex;
-  width: 100vw;
-  height: 100dvh;
-  overflow-y: auto;
-  padding: 8rem 3rem;
-`;
 
 export const Frame = styled.aside`
   display: flex;
@@ -26,21 +10,37 @@ export const Frame = styled.aside`
   background-color: var(--modal-background);
   border-radius: 0 0 1.6rem 1.6rem;
   overscroll-behavior-y: contain;
+
+  .header-navigation {
+    width: 100%;
+  }
+
+  ul {
+    flex-flow: column;
+    gap: 2rem;
+    padding-block: 2rem;
+    border-block: 1px solid #858585;
+    width: 100%;
+  }
 `;
 
 export const BurgerCloseButton = styled.button`
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-flow: column;
-  align-items: center;
-  padding: 6rem 3.2rem 1.2rem 3.2rem;
-  background-color: var(--modal-background);
-  border-radius: 0 0 1.6rem 1.6rem;
-  overscroll-behavior-y: contain;
+  margin: 0;
+	padding: 0;
+
+	line-height: inherit;
+	text-align: unset;
+
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	box-sizing: border-box;
+	cursor: pointer;
+
+  position: absolute;
+  top: 2rem;
+  right: 3.5rem;
+  width: 3rem;
+  height: 3rem;
 `;
 
-export const Handle = styled(Drawer.Handle)`
-	margin-top: 1.5rem;
-	background-color: #c3c3c8;
-`;

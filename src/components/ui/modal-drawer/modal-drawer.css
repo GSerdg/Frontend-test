@@ -1,0 +1,22 @@
+.modal-drawer__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #00000066;
+  z-index: var(--modal--burger-overlay-index);
+}
+
+.modal-burger-drawer__content {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0 !important;
+  right: 0 !important;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--modal--burger-content-index);
+}
+
+.modal-burger-drawer__handle[data-vaul-handle] {
+  margin-top: 1.5rem;
+  background-color: var(--secondary-gray);
+}
