@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
+import { Card } from "./Card";
 
 const ScreenContainer = styled(motion.div)``;
 
@@ -19,6 +20,7 @@ export const HomeScreen: FC = () => {
       }}
     >
       HomeScreen
+      <Card />
     </ScreenContainer>
   );
 };

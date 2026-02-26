@@ -1,0 +1,21 @@
+import { FC, SVGProps } from "react";
+
+interface Props extends SVGProps<SVGSVGElement> {
+  color?: `#${string}`;
+}
+
+export const Crypto: FC<Props> = ({ color = "#141416", ...props }) => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M11.0014 1.6045L5.27222 11.2295L11.0014 14.667L16.7306 11.2295L11.0014 1.6045ZM5.27222 12.3753L11.0014 20.3962L16.7306 12.3753L11.0014 15.8128L5.27222 12.3753Z"
+      fill={color}
+    />
+  </svg>
+);
