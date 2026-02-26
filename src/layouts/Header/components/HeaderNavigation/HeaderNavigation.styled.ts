@@ -6,6 +6,10 @@ export const NavigationList = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 5rem;
+
+  @media screen and (max-width: 1024px) {
+    gap: 3.2rem;
+  }
 `;
 
 export const NavigationItem = styled.li`
@@ -19,12 +23,18 @@ export const NavigationLink = styled(Link)`
 
   text-decoration: none;
   font-size: 1.8rem;
+  line-height: 2.6rem;
   font-weight: 500;
   text-wrap: nowrap;
   text-transform: uppercase;
   color: #606060;
 
   transition: color 0.3s;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
 
   &:hover {
     @media (hover: hover) and (pointer: fine) {

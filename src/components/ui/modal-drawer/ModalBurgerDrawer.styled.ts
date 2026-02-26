@@ -4,11 +4,11 @@ export const Frame = styled.aside`
   display: flex;
   position: relative;
   width: 100%;
+  height: 100vh;
   flex-flow: column;
   align-items: center;
-  padding: 6rem 3.2rem 1.2rem 3.2rem;
+  padding: 0 3rem;
   background-color: var(--modal-background);
-  border-radius: 0 0 1.6rem 1.6rem;
   overscroll-behavior-y: contain;
 
   .header-navigation {
@@ -18,10 +18,15 @@ export const Frame = styled.aside`
   ul {
     flex-flow: column;
     gap: 2rem;
-    padding-block: 2rem;
-    border-block: 1px solid #858585;
-    width: 100%;
-  }
+    padding-block: 4.4rem;
+    border-top: 1px solid #CBCBCB;
+    align-items: start;
+
+    li a {
+      font-size: 4rem;
+      line-height: 4.2rem;
+    }
+}
 `;
 
 export const BurgerCloseButton = styled.button`
@@ -38,9 +43,14 @@ export const BurgerCloseButton = styled.button`
 	cursor: pointer;
 
   position: absolute;
-  top: 2rem;
-  right: 3.5rem;
-  width: 3rem;
-  height: 3rem;
+  top: 3.7rem;
+  right: 3rem;
+  width: 4rem;
+  height: 4rem;
 `;
 
+export const LogoContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 10.4rem;
+`;

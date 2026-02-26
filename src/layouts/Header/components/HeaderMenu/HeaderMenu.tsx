@@ -11,9 +11,9 @@ import { MenuButton } from "../MenuButton";
 import { Container } from "./HeaderMenu.styled";
 
 export function HeaderMenu({ children }: PropsWithChildren) {
-  const { isOpen, open, close, toggle } = useDisclosure(false);
+  const { isOpen, close, toggle } = useDisclosure(false);
 
-  const isHideBurger = useMediaQuery(861);
+  const isHideBurger = useMediaQuery(600);
 
   const handleClick: MouseEventHandler<HTMLElement> = (event) => {
     const target = event.target as HTMLElement;

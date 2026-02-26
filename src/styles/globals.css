@@ -1,7 +1,4 @@
 :root {
-  --container-max-width: 1240px;
-  --container-margin: 3rem;
-
   --modal-background: #f9f9f9;
 
   --modal--burger-overlay-index: 2;

@@ -1,7 +1,9 @@
 import { type PropsWithChildren } from "react";
-import { Content, Drawer, Handle, Overlay } from "vaul";
-import { Frame, BurgerCloseButton } from "./ModalBurgerDrawer.styled";
+import { Drawer } from "vaul";
+import { Frame, BurgerCloseButton, LogoContainer } from "./ModalBurgerDrawer.styled";
+import { HeaderLogo } from "@/layouts/Header/components";
 import "./modal-drawer.css"
+
 interface Props extends PropsWithChildren {
   open: boolean;
   onClose: VoidFunction;
@@ -26,6 +28,9 @@ export function ModalBurgerDrawer({ children, open, onClose }: Props) {
           <Drawer.Description />
           <Frame>
             <BurgerCloseButton onClick={onClose} type="button" />
+            <LogoContainer>
+              <HeaderLogo />
+            </LogoContainer>
             {children}
             <Drawer.Handle className="modal-burger-drawer__handle" />
           </Frame>

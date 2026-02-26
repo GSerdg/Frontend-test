@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const BurgerButton = styled.button`
-  --indicator-size: 3rem;
-  --indicator-width: 3rem;
-  --indicator-height: calc(0.075 * var(--indicator-size));
-  --indicator-offset: calc(0.2 * var(--indicator-size));
+  --indicator-size: 4rem;
+  --indicator-width: 4rem;
+  --indicator-height: calc(0.06 * var(--indicator-size));
+  --indicator-offset: calc(0.25 * var(--indicator-size));
   --indicator-offset-calc: calc(
     var(--indicator-offset) + var(--indicator-height)
   );
@@ -29,7 +29,7 @@ export const BurgerButton = styled.button`
     box-shadow: 0 2px 10px 0 rgba(0 0 0 / 30%);
     border-radius: 3px;
     height: var(--indicator-height);
-    background-color: #e42011;
+    background-color: #000000;
     transition: all 0.3s;
     position: relative;
   }

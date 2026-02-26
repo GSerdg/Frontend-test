@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 import { Footer, Header } from "@/layouts";
 import "../styles/normalize.css";
 import "../styles/globals.css";
 import { LayoutGrid } from "./Layout.styled";
+import StyledComponentsRegistry from "./registry";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ['latin'],
-  display: 'swap',
-  weight: "400"
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LayoutGrid>
-          <Header />
-        </LayoutGrid>
-        {children}
-        <LayoutGrid>
-          <Footer />
-        </LayoutGrid>
+        <StyledComponentsRegistry>
+          <LayoutGrid>
+            <Header />
+          </LayoutGrid>
+          {children}
+          <LayoutGrid>
+            <Footer />
+          </LayoutGrid>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
