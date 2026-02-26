@@ -20,7 +20,7 @@ const LogoContainer = styled.div`
   gap: 0.7rem;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 670px) {
     margin-bottom: 3.2rem;
   }
 `;

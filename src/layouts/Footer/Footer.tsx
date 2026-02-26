@@ -14,7 +14,7 @@ const MotionContainer = styled(motion.footer)`
     padding: 6rem 0;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 670px) {
     padding: 5.2rem 0 4rem;
   }
 `;
@@ -24,7 +24,7 @@ const FlexWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 670px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -40,7 +40,7 @@ const Divider = styled.div`
     margin-top: 2.1rem;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 670px) {
     margin-top: 4.8rem;
   }
 `;
@@ -58,7 +58,7 @@ const Title = styled.p`
     line-height: 1.7rem;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 670px) {
     margin: 2.6rem 0 0;
     font-size: 1.4rem;
     line-height: 1.6rem;

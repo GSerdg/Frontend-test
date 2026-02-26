@@ -9,7 +9,7 @@ export const NavigationList = styled.ul`
     gap: 5rem;
   }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 670px) {
     flex-direction: column;
     gap: 3rem,
   }
@@ -21,8 +21,6 @@ export const NavigationItem = styled.li`
 
 export const NavigationLink = styled(Link)`
   display: flex;
-  /* column-gap: 5rem; */
-  /* align-items: center; */
 
   text-decoration: none;
   font-size: 1.8rem;
@@ -38,7 +36,7 @@ export const NavigationLink = styled(Link)`
     line-height: 2rem;
   }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 670px) {
     font-size: 1.4rem;
     line-height: 2rem;
     text-transform: uppercase;
