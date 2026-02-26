@@ -22,4 +22,21 @@ export const ROUTES = {
     href: "/stats",
     label: "stats",
   },
+  
+  PRIVACY_POLICY: {
+    href: "/privacy-policy",
+    label: "Privacy policy",
+  },
+  TERM_CONDITIONS: {
+    href: "/term-and-conditions",
+    label: "Term & Conditions",
+  },
+  ABOUT_US: {
+    href: "/about-us",
+    label: "About Us",
+  },
+  CONTACT: {
+    href: "/contact",
+    label: "Contact",
+  },
 } as const;

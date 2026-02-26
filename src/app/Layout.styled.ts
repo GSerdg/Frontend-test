@@ -24,6 +24,10 @@ export const LayoutGrid = styled.div`
 `;
 
 export const ContentStyled = styled.div`
-  background: '#F1F1F1';
+  background: #F1F1F1;
   flex-grow: 1;
+`;
+
+export const FooterWrapper = styled.div`
+  background: #141416;
 `;

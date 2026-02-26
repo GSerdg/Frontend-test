@@ -5,7 +5,7 @@ import { HeaderLogo, HeaderMenu, HeaderNavigation } from "./components";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const MotionContainer = styled(motion.div)`
+const MotionContainer = styled(motion.header)`
   display: flex;
   align-items: center;
   gap: 6.6rem;
@@ -30,7 +30,6 @@ export const Header: FC = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{
         delay: 0.05,
-        // duration: 0.3,
         type: "spring",
         stiffness: 100,
         damping: 15,

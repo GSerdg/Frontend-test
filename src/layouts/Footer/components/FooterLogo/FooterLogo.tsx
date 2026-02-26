@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Logo } from "@/components/svg";
 import { ROUTES } from "@/consts";
@@ -15,45 +15,46 @@ const poppins = Poppins({
   weight: ["400", "600"],
 });
 
-export const LogoContainer = styled.div`
+const LogoContainer = styled.div`
   display: flex;
   gap: 0.7rem;
   align-items: center;
-`;
-
-export const HeadTitle = styled.h1`
-  display: none;
-  margin: 0;
-
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 2.4rem;
 
   @media screen and (max-width: 600px) {
-    display: flex;
+    margin-bottom: 3.2rem;
   }
 `;
 
-export const HeaderLogo: FC = () => {
+const HeadTitle = styled.h1`
+  display: flex;
+  margin: 0;
+
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 130%;
+  color: #ffffff;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2.2rem;
+  }
+`;
+
+export const FooterLogo: FC = () => {
   const isTablet = useMediaQuery(1024);
   const isMobile = useMediaQuery(600);
 
   const logoSize = useMemo(() => {
-    if (isMobile) {
+    if (isTablet) {
       return 46;
     }
 
-    if (isTablet) {
-      return 38;
-    }
-
-    return 54;
+    return 65;
   }, [isMobile, isTablet]);
 
   return (
     <LogoContainer>
       <Link href={ROUTES.HOME.href}>
-        <Logo width={logoSize} height={logoSize} />
+        <Logo width={logoSize} height={logoSize} color="#FFFFFF" />
       </Link>
       <HeadTitle className={poppins.className}>DiveSea</HeadTitle>
     </LogoContainer>
