@@ -30,7 +30,7 @@ export const Header: FC = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{
         delay: 0.05,
-        duration: 0.6,
+        // duration: 0.3,
         type: "spring",
         stiffness: 100,
         damping: 15,

@@ -22,3 +22,8 @@ export const LayoutGrid = styled.div`
     --container-margin: 3rem;
   }
 `;
+
+export const ContentStyled = styled.div`
+  background: '#F1F1F1';
+  flex-grow: 1;
+`;

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { Footer, Header } from "@/layouts";
 import "../styles/normalize.css";
 import "../styles/globals.css";
-import { LayoutGrid } from "./Layout.styled";
+import { ContentStyled, LayoutGrid } from "./Layout.styled";
 import StyledComponentsRegistry from "./registry";
 
 const inter = Inter({
@@ -30,7 +30,7 @@ export default function RootLayout({
           <LayoutGrid>
             <Header />
           </LayoutGrid>
-          {children}
+          <ContentStyled>{children}</ContentStyled>
           <LayoutGrid>
             <Footer />
           </LayoutGrid>
