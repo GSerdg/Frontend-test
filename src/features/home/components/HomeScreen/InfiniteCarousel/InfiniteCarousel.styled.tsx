@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const Track = styled(motion.div)`
   display: flex;
-  gap: 24px;
+  gap: 4rem;
   cursor: grab;
 
   &:active {
@@ -16,19 +16,6 @@ export const Track = styled(motion.div)`
 
   @media (max-width: 768px) {
     gap: 16px;
-  }
-`
-
-export const CardWrapper = styled.div`
-  flex: 0 0 auto;
-  width: 320px;
-
-  @media (max-width: 1024px) {
-    width: 280px;
-  }
-
-  @media (max-width: 768px) {
-    width: 240px;
   }
 `
 

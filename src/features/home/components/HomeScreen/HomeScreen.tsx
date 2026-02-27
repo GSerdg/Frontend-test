@@ -3,9 +3,7 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
-import { Card } from "./Card";
 import { InfiniteCarousel } from "./InfiniteCarousel";
-import { CarouselButtons } from "./InfiniteCarousel/CarouselButtons";
 
 const ScreenContainer = styled(motion.div)`
   display: flex;

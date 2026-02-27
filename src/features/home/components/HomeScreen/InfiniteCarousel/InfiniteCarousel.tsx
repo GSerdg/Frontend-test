@@ -1,43 +1,68 @@
 "use client";
 
-import { FC, useLayoutEffect, useRef, useState } from "react";
+import { FC, useLayoutEffect, useRef } from "react";
 import { useMotionValue, animate } from "framer-motion";
 import { Card } from "../Card/Card";
-import {
-  Wrapper,
-  Track,
-  Controls,
-  CardWrapper,
-} from "./InfiniteCarousel.styled";
+import { Wrapper, Track } from "./InfiniteCarousel.styled";
 import { CarouselButtons } from "./CarouselButtons";
+import { MOCK_CARDS_DATA } from "@/features/home/consts";
+
+const extended = [
+  ...MOCK_CARDS_DATA,
+  ...MOCK_CARDS_DATA,
+  ...MOCK_CARDS_DATA,
+  ...MOCK_CARDS_DATA,
+  ...MOCK_CARDS_DATA,
+];
+const CENTER_CARD_INDEX = Math.floor(MOCK_CARDS_DATA.length / 2);
 
 export const InfiniteCarousel: FC = () => {
-  const baseCards = [1, 2, 3, 4, 5];
-  const extended = [...baseCards, ...baseCards, ...baseCards];
-
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+
   const x = useMotionValue(0);
 
-  const setWidthRef = useRef(0);
+  const metricsRef = useRef({
+    itemSize: 0,
+    setWidth: 0,
+    baseX: 0,
+    originIndex: 0,
+    activeIndex: 0,
+  });
 
   const measure = () => {
-    if (!trackRef.current) return;
+    if (!trackRef.current || !wrapperRef.current) return;
 
-    const firstCard = trackRef.current.children[0] as HTMLElement;
+    const first = trackRef.current.children[0] as HTMLElement;
+    if (!first) return;
 
-    if (!firstCard) return;
-
-    const cardWidth = firstCard.getBoundingClientRect().width;
+    const cardWidth = first.getBoundingClientRect().width;
 
     const styles = getComputedStyle(trackRef.current);
-    const gap = parseFloat(styles.columnGap || styles.gap);
+    const gap = Number.parseFloat(styles.gap || styles.columnGap || "0");
 
-    const oneSetWidth = (cardWidth + gap) * baseCards.length;
+    const itemSize = cardWidth + gap;
+    const len = MOCK_CARDS_DATA.length;
+    const setWidth = itemSize * len;
 
-    setWidthRef.current = oneSetWidth;
+    const containerWidth = wrapperRef.current.getBoundingClientRect().width;
 
-    // старт в центре
-    x.set(-oneSetWidth);
+    const centerOffset = (containerWidth - cardWidth) / 2;
+
+    const midSetStart = 2 * len;
+    const originIndex = midSetStart + CENTER_CARD_INDEX;
+
+    const baseX = centerOffset - originIndex * itemSize;
+
+    metricsRef.current = {
+      itemSize,
+      setWidth,
+      baseX,
+      originIndex,
+      activeIndex: originIndex,
+    };
+
+    x.set(baseX);
   };
 
   useLayoutEffect(() => {
@@ -46,59 +71,72 @@ export const InfiniteCarousel: FC = () => {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  const checkBounds = () => {
-    const setWidth = setWidthRef.current;
-    const current = x.get();
+  const moveToIndex = (index: number) => {
+    const { itemSize, baseX, originIndex } = metricsRef.current;
 
-    if (current <= -setWidth * 2) {
-      x.set(current + setWidth);
-    }
+    metricsRef.current.activeIndex = index;
 
-    if (current >= 0) {
-      x.set(current - setWidth);
-    }
+    const newX = baseX - (index - originIndex) * itemSize;
+
+    animate(x, newX, {
+      duration: 0.35,
+      onComplete: () => {
+        const len = MOCK_CARDS_DATA.length;
+        const pos = ((metricsRef.current.activeIndex % len) + len) % len;
+
+        const normalizedIndex = originIndex + (pos - CENTER_CARD_INDEX);
+
+        if (normalizedIndex !== metricsRef.current.activeIndex) {
+          const diff = metricsRef.current.activeIndex - normalizedIndex;
+          metricsRef.current.activeIndex = normalizedIndex;
+          x.set(x.get() + diff * itemSize);
+        }
+      },
+    });
   };
 
-  const move = (direction: "next" | "prev") => {
-    if (!trackRef.current) return;
+  const next = () => {
+    moveToIndex(metricsRef.current.activeIndex + 1);
+  };
 
-    const firstCard = trackRef.current.children[0] as HTMLElement;
+  const prev = () => {
+    moveToIndex(metricsRef.current.activeIndex - 1);
+  };
 
-    const cardWidth = firstCard.getBoundingClientRect().width;
+  const handleDragEnd = () => {
+    const { itemSize, baseX, originIndex } = metricsRef.current;
 
-    const styles = getComputedStyle(trackRef.current);
-    const gap = parseFloat(styles.columnGap || styles.gap);
+    const currentX = x.get();
+    const delta = baseX - currentX;
 
-    const distance = cardWidth + gap;
+    const moved = Math.round(delta / itemSize);
 
-    animate(x, x.get() + (direction === "next" ? -distance : distance), {
-      duration: 0.35,
-      onComplete: checkBounds,
-    });
+    moveToIndex(originIndex + moved);
   };
 
   return (
     <>
-      <Wrapper>
+      <Wrapper ref={wrapperRef}>
         <Track
           ref={trackRef}
           drag="x"
           dragConstraints={{ left: -Infinity, right: Infinity }}
-          dragElastic={0.1}
+          dragElastic={0.08}
           style={{ x }}
-          onDragEnd={checkBounds}
+          onDragEnd={handleDragEnd}
         >
-          {extended.map((_, index) => (
-            <CardWrapper key={index}>
-              <Card />
-            </CardWrapper>
+          {extended.map((item, index) => (
+            <Card
+              key={index}
+              img={item.img}
+              head={item.head}
+              currentBid={item.currentBid}
+              date={item.date}
+            />
           ))}
         </Track>
       </Wrapper>
-      <CarouselButtons
-        prevSlide={() => move("prev")}
-        nextSlide={() => move("next")}
-      />
+      <CarouselButtons prevSlide={prev} nextSlide={next} />
     </>
   );
 };

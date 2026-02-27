@@ -1,6 +1,5 @@
-'use client'
+"use client";
 import { FC } from "react";
-import CardImage from "@/../public/images/img1.jpg";
 import {
   CardContainer,
   ImageContainer,
@@ -16,22 +15,29 @@ import {
 } from "./Card.styled";
 import { CountdownBadge } from "./CountdownBadge";
 
-export const Card: FC = () => {
+type Props = {
+  img: string;
+  head: string;
+  currentBid: number;
+  date: string;
+};
+
+export const Card: FC<Props> = ({ img, head, currentBid, date }) => {
   return (
     <CardContainer>
-      <CountdownBadge targetDate="2026-03-01T00:00:00" />
-      <ImageContainer src={CardImage} alt="image 1" loading="eager" />
+      <CountdownBadge targetDate={date} />
+      <ImageContainer src={img} height={253} width={253} alt="image" loading="eager" />
       <FlexColumn>
-        <CardHead>Sun-Glass</CardHead>
+        <CardHead>{head}</CardHead>
         <PaymentContainer>
           <DivContainer>
             <CardTitle>Current bid</CardTitle>
             <PriceContainer>
               <CryptoStyled />
-              <PriceTitle>1.75</PriceTitle>
+              <PriceTitle suppressHydrationWarning>{currentBid}</PriceTitle>
             </PriceContainer>
           </DivContainer>
-        <CardButton>PLACE BID</CardButton>
+          <CardButton>PLACE BID</CardButton>
         </PaymentContainer>
       </FlexColumn>
     </CardContainer>
