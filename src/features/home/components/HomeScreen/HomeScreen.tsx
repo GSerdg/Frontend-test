@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 import styled from "styled-components";
 import { Card } from "./Card";
+import { InfiniteCarousel } from "./InfiniteCarousel";
+import { CarouselButtons } from "./InfiniteCarousel/CarouselButtons";
 
 const ScreenContainer = styled(motion.div)`
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 7rem;
   padding: 7rem 0;
@@ -43,7 +46,7 @@ export const HomeScreen: FC = () => {
       }}
     >
       <HeadTitle>Weekly - Top NFT</HeadTitle>
-      <Card />
+      <InfiniteCarousel />
     </ScreenContainer>
   );
 };
