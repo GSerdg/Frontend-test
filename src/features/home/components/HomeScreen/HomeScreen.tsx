@@ -5,7 +5,20 @@ import { FC } from "react";
 import styled from "styled-components";
 import { Card } from "./Card";
 
-const ScreenContainer = styled(motion.div)``;
+const ScreenContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  padding: 7rem 0;
+`;
+
+const HeadTitle = styled.h1`
+  font-size: 4.6rem;
+  font-weight: 600;
+  line-height: 4.8rem;
+  text-align: center;
+  color: #C5C5C5;
+`;
 
 export const HomeScreen: FC = () => {
   return (
@@ -19,7 +32,7 @@ export const HomeScreen: FC = () => {
         mass: 1,
       }}
     >
-      HomeScreen
+      <HeadTitle>Weekly - Top NFT</HeadTitle>
       <Card />
     </ScreenContainer>
   );

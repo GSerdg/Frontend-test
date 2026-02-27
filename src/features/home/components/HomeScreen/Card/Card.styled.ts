@@ -9,6 +9,7 @@ export const FlexColumn = styled.section`
 
 export const CardContainer = styled.article`
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 20px;
   width: 28.1rem;

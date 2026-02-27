@@ -3,17 +3,10 @@
 import { Logo } from "@/components/svg";
 import { ROUTES } from "@/consts";
 import { useMediaQuery } from "@/hooks";
-import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { FC, useMemo } from "react";
 import styled from "styled-components";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "600"],
-});
+import { poppins } from "@/../public/fonts";
 
 export const LogoContainer = styled.div`
   display: flex;
@@ -21,7 +14,7 @@ export const LogoContainer = styled.div`
   align-items: center;
 `;
 
-export const HeadTitle = styled.h1`
+export const HeadTitle = styled.h3`
   display: none;
   margin: 0;
 

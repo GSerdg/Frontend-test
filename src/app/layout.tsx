@@ -1,24 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
 import { Footer, Header } from "@/layouts";
 import "../styles/normalize.css";
 import "../styles/globals.css";
 import { ContentStyled, FooterWrapper, LayoutGrid } from "./Layout.styled";
 import StyledComponentsRegistry from "./registry";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-  weight: "400",
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
+import { inter, poppins } from "../../public/fonts";
 
 export const metadata: Metadata = {
   title: "Frontend test",
