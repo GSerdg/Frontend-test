@@ -20,18 +20,29 @@ const BadgeStyled = styled.div`
   line-height: 100%;
   font-weight: 500;
   text-wrap: nowrap;
-  color: #FFFFFF;
+  color: #ffffff;
   font-variant-numeric: tabular-nums;
 
-  background: #1C1D2059;
-  border: 1px solid #1C1D2014;
+  background: #1c1d2059;
+  border: 1px solid #1c1d2014;
   border-radius: 1rem;
   padding: 1rem 1.4rem;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1rem;
+    line-height: 100%;
+    padding: 0.7rem 1rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.1rem;
+    line-height: 100%;
+  }
 `;
 
 type Props = {
   targetDate: string;
-}
+};
 
 const format = (num: number) => String(num).padStart(2, "0");
 
@@ -43,4 +54,4 @@ export const CountdownBadge: FC<Props> = ({ targetDate }: Props) => {
       {format(hours)}h {format(minutes)}m {format(seconds)}s
     </BadgeStyled>
   );
-}
+};

@@ -1,6 +1,6 @@
+'use client'
 import { FC } from "react";
 import CardImage from "@/../public/images/img1.jpg";
-import { Crypto } from "@/components/svg";
 import {
   CardContainer,
   ImageContainer,
@@ -11,6 +11,8 @@ import {
   PriceContainer,
   PriceTitle,
   CardButton,
+  CryptoStyled,
+  DivContainer,
 } from "./Card.styled";
 import { CountdownBadge } from "./CountdownBadge";
 
@@ -22,13 +24,13 @@ export const Card: FC = () => {
       <FlexColumn>
         <CardHead>Sun-Glass</CardHead>
         <PaymentContainer>
-          <div>
+          <DivContainer>
             <CardTitle>Current bid</CardTitle>
             <PriceContainer>
-              <Crypto />
+              <CryptoStyled />
               <PriceTitle>1.75</PriceTitle>
             </PriceContainer>
-          </div>
+          </DivContainer>
         <CardButton>PLACE BID</CardButton>
         </PaymentContainer>
       </FlexColumn>

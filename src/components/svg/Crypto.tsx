@@ -1,4 +1,7 @@
 import { FC, SVGProps } from "react";
+import styled from "styled-components";
+
+
 
 interface Props extends SVGProps<SVGSVGElement> {
   color?: `#${string}`;
@@ -6,8 +9,8 @@ interface Props extends SVGProps<SVGSVGElement> {
 
 export const Crypto: FC<Props> = ({ color = "#141416", ...props }) => (
   <svg
-    width="22"
-    height="22"
+    // width="22"
+    // height="22"
     viewBox="0 0 22 22"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

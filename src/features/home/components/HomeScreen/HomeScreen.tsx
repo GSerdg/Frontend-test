@@ -17,7 +17,17 @@ const HeadTitle = styled.h1`
   font-weight: 600;
   line-height: 4.8rem;
   text-align: center;
-  color: #C5C5C5;
+  color: #c5c5c5;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
 `;
 
 export const HomeScreen: FC = () => {
