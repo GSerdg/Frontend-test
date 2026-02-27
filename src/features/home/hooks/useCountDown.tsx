@@ -1,3 +1,5 @@
+'use client';
+
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 
@@ -19,9 +21,9 @@ export const useCountDown = (targetDate: string | Date) => {
       seconds: duration.seconds(),
     };
   };
-
+  
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());

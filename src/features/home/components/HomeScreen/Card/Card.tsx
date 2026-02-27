@@ -12,7 +12,7 @@ import {
   PriceTitle,
   CardButton,
 } from "./Card.styled";
-import CountdownBadge from "./CountdownBadge";
+import { CountdownBadge } from "./CountdownBadge";
 
 export const Card: FC = () => {
   return (

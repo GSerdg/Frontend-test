@@ -12,7 +12,6 @@ export const CardContainer = styled.article`
   flex-direction: column;
   gap: 20px;
   width: 28.1rem;
-  /* height: 39.5rem; */
   border-radius: 2.4rem;
   padding: 1.4rem;
   background: #ffffff;
