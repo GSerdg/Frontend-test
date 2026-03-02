@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  # Dev service (bind-mounts source, runs next dev)
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - ./:/app:cached
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    tty: true

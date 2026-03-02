@@ -51,3 +51,32 @@ npm run lint
 - `src/features/home/consts/index.ts` — мок-данные `MOCK_CARDS_DATA` (поле `date` генерируется с помощью dayjs).
 
 ---
+
+Docker
+------
+
+Добавлены файлы `Dockerfile`, `docker-compose.yml` и `.dockerignore` для запуска приложения в контейнере.
+
+Production build (recommended):
+
+```powershell
+docker build -t frontend-test .
+docker run -p 3000:3000 frontend-test
+```
+
+Or with docker-compose:
+
+```powershell
+docker-compose up --build
+```
+
+Development (hot-reload) with docker-compose:
+
+```powershell
+docker-compose up app-dev --build
+```
+
+Notes:
+- The Dockerfile uses a multi-stage build: dependencies + build in `builder`, then copies only the `.next` and `public` folders into a minimal runtime image.
+- `app-dev` in `docker-compose.yml` mounts the project into the container and runs `npm run dev` for faster local iteration.
+
