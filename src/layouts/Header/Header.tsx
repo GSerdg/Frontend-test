@@ -7,12 +7,13 @@ import { motion } from "framer-motion";
 
 const MotionContainer = styled(motion.header)`
   display: flex;
+  position: sticky;
+  top: 0;
   align-items: center;
   gap: 6.6rem;
-  height: 14.5rem;
+  height: 8.8rem;
 
   @media screen and (max-width: 1024px) {
-    height: 10.4rem;
     gap: 4rem;
   }
 

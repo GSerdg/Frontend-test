@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FC, Suspense } from "react";
+import { FC } from "react";
 import styled from "styled-components";
 import { InfiniteCarousel } from "./InfiniteCarousel";
 import { CardsQuery } from "@/api";
-import Skeleton from "react-loading-skeleton";
 
 const ScreenContainer = styled(motion.div)`
   display: flex;

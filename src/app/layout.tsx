@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Footer, Header } from "@/layouts";
 import "../styles/normalize.css";
 import "../styles/globals.css";
-import { ContentStyled, FooterWrapper, LayoutGrid } from "./Layout.styled";
+import { ContentStyled, FooterWrapper, HeaderSpace, HeaderWrapper, LayoutGrid } from "./Layout.styled";
 import StyledComponentsRegistry from "./registry";
 import { inter, poppins } from "../../public/fonts";
 
@@ -20,10 +20,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <LayoutGrid>
-            <Header />
-          </LayoutGrid>
-          <ContentStyled className={poppins.className}>{children}</ContentStyled>
+          <HeaderSpace />
+          <HeaderWrapper>
+            <LayoutGrid>
+              <Header />
+            </LayoutGrid>
+          </HeaderWrapper>
+          <HeaderSpace />
+          <ContentStyled className={poppins.className}>
+            {children}
+          </ContentStyled>
           <FooterWrapper>
             <LayoutGrid>
               <Footer />

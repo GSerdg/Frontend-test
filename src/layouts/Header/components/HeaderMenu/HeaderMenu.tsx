@@ -23,11 +23,6 @@ export function HeaderMenu({ children }: PropsWithChildren) {
     }
   };
 
-  function handleClickMenuButton() {
-    window.scrollTo(0, 0);
-    toggle();
-  }
-
   useEffect(() => {
     if (!isShowBurger) {
       close();
@@ -39,7 +34,7 @@ export function HeaderMenu({ children }: PropsWithChildren) {
       <ModalBurgerDrawer open={isOpen} onClose={() => close()}>
         {children}
       </ModalBurgerDrawer>
-      <MenuButton open={isOpen} onClick={handleClickMenuButton} />
+      <MenuButton open={isOpen} onClick={toggle} />
     </Container>
   );
 }
