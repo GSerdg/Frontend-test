@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import styled from "styled-components";
 import { InfiniteCarousel } from "./InfiniteCarousel";
+import { CardsQuery } from "@/api";
+import Skeleton from "react-loading-skeleton";
 
 const ScreenContainer = styled(motion.div)`
   display: flex;
@@ -31,7 +33,9 @@ const HeadTitle = styled.h1`
   }
 `;
 
-export const HomeScreen: FC = () => {
+export const HomeScreen: FC<{ cardsData: CardsQuery[] | null }> = ({
+  cardsData,
+}) => {
   return (
     <ScreenContainer
       initial={{ y: 0, opacity: 0 }}
@@ -44,7 +48,7 @@ export const HomeScreen: FC = () => {
       }}
     >
       <HeadTitle>Weekly - Top NFT</HeadTitle>
-      <InfiniteCarousel />
+      {cardsData ? <InfiniteCarousel cardsData={cardsData} /> : 'Error loading'}
     </ScreenContainer>
   );
 };

@@ -1,4 +1,5 @@
 "use client";
+
 import { FC } from "react";
 import {
   CardContainer,
@@ -26,7 +27,14 @@ export const Card: FC<Props> = ({ img, head, currentBid, date }) => {
   return (
     <CardContainer>
       <CountdownBadge targetDate={date} />
-      <ImageContainer src={img} height={253} width={253} alt="image" loading="eager" />
+      <ImageContainer
+        src={img}
+        height={253}
+        width={253}
+        alt="image"
+        loading="eager"
+        draggable="false"
+      />
       <FlexColumn>
         <CardHead>{head}</CardHead>
         <PaymentContainer>

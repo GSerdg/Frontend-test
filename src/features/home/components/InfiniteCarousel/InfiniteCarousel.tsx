@@ -6,19 +6,22 @@ import { Card } from "../Card/Card";
 import { Wrapper, Track } from "./InfiniteCarousel.styled";
 import { CarouselButtons } from "./CarouselButtons";
 import { MOCK_CARDS_DATA } from "@/features/home/consts";
+import { CardsQuery } from "@/api";
 
-const extended = [
-  ...MOCK_CARDS_DATA,
-  ...MOCK_CARDS_DATA,
-  ...MOCK_CARDS_DATA,
-  ...MOCK_CARDS_DATA,
-  ...MOCK_CARDS_DATA,
-];
 const CENTER_CARD_INDEX = Math.floor(MOCK_CARDS_DATA.length / 2);
 
-export const InfiniteCarousel: FC = () => {
+export const InfiniteCarousel: FC<{ cardsData: CardsQuery[] | null }> = ({
+  cardsData,
+}) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+
+  const unionCardsData = MOCK_CARDS_DATA.map((item, index) => ({
+    ...item,
+    head: cardsData?.[index].name ?? "",
+  }));
+
+  const extended = Array.from({ length: 5 }).flatMap(() => unionCardsData);
 
   const x = useMotionValue(0);
 

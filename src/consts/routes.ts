@@ -40,3 +40,7 @@ export const ROUTES = {
     label: "Contact",
   },
 } as const;
+
+export const ROUTES_API = {
+	CARDS: `${process.env.NEXT_PUBLIC_API}/nfts/list`,
+} as const;

@@ -10,6 +10,7 @@ export const FlexColumn = styled.section`
 
 export const CardContainer = styled.article`
   display: flex;
+  justify-content: space-between;
   position: relative;
   flex-direction: column;
   gap: 20px;
