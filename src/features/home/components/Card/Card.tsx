@@ -45,7 +45,13 @@ export const Card: FC<Props> = ({ img, head, currentBid, date }) => {
               <PriceTitle suppressHydrationWarning>{currentBid}</PriceTitle>
             </PriceContainer>
           </DivContainer>
-          <CardButton>PLACE BID</CardButton>
+             <CardButton
+               type="button"
+               draggable={false}
+               style={{ cursor: "pointer" }}
+             >
+               PLACE BID
+             </CardButton>
         </PaymentContainer>
       </FlexColumn>
     </CardContainer>

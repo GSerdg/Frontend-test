@@ -10,10 +10,6 @@ export const Track = styled(motion.div)`
   gap: 4rem;
   cursor: grab;
 
-  &:active {
-    cursor: grabbing;
-  }
-
   @media (max-width: 768px) {
     gap: 16px;
   }
