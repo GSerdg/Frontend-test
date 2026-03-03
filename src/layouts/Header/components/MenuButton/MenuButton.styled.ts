@@ -26,8 +26,8 @@ export const BurgerButton = styled.button`
     display: block;
     width: 100%;
     width: var(--indicator-width);
-    box-shadow: 0 2px 10px 0 rgba(0 0 0 / 30%);
-    border-radius: 3px;
+    box-shadow: 0 0.2rem 1rem 0 rgba(0 0 0 / 30%);
+    border-radius: 0.3rem;
     height: var(--indicator-height);
     background-color: #000000;
     transition: all 0.3s;

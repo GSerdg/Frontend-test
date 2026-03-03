@@ -19,7 +19,7 @@ export const Frame = styled.aside`
     flex-flow: column;
     gap: 2rem;
     padding-block: 4.4rem;
-    border-top: 1px solid #CBCBCB;
+    border-top: 0.1rem solid #CBCBCB;
     align-items: start;
 
     li a {

@@ -11,14 +11,14 @@ export const Track = styled(motion.div)`
   cursor: grab;
 
   @media (max-width: 768px) {
-    gap: 16px;
+    gap: 1.6rem;
   }
 `;
 
 export const Controls = styled.div`
-  margin-top: 40px;
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 2rem;
 `;
 

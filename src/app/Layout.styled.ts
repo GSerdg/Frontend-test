@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LayoutGrid = styled.div`
-  --container-max-width: 1240px;
+  --container-max-width: 124rem;
   --container-margin: 9.7rem;
 
   display: grid;
@@ -37,7 +37,7 @@ export const HeaderWrapper = styled.div`
 
   animation: colorChange linear both;
   animation-timeline: scroll();
-  animation-range: 50px 200px;
+  animation-range: 5rem 20rem;
 
   @keyframes colorChange {
     from {
@@ -45,7 +45,7 @@ export const HeaderWrapper = styled.div`
     }
     to {
       background-color: #d1d1d1ff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
     }
   }
 `;

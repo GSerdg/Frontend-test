@@ -24,7 +24,7 @@ const BadgeStyled = styled.div`
   font-variant-numeric: tabular-nums;
 
   background: #1c1d2059;
-  border: 1px solid #1c1d2014;
+  border: 0.1rem solid #1c1d2014;
   border-radius: 1rem;
   padding: 1rem 1.4rem;
 

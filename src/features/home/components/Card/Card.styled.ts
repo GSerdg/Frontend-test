@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const FlexColumn = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 `;
 
 export const CardContainer = styled.article`
@@ -13,12 +13,12 @@ export const CardContainer = styled.article`
   justify-content: space-between;
   position: relative;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
   width: 28.1rem;
   border-radius: 2.4rem;
   padding: 1.4rem;
   background: #ffffff;
-  box-shadow: 38px 12px 60px 0px #c7c7c799;
+  box-shadow: 3.8rem 1.2rem 6rem 0rem #c7c7c799;
 
   @media screen and (max-width: 1024px) {
     width: 21rem;
@@ -129,11 +129,11 @@ export const CardButton = styled.button`
 `;
 
 export const CryptoStyled = styled(Crypto)`
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
 
   @media screen and (max-width: 1024px) {
-    width: 16px;
-    height: 16px;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 `;

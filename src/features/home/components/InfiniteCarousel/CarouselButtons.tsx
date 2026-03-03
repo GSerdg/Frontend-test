@@ -6,7 +6,7 @@ const Container = styled.div`
   display: flex;
   width: max-content;
   padding: 2rem;
-  box-shadow: 0px 43px 34px -25.87px #0f0f0f1f;
+  box-shadow: 0rem 4.3rem 3.4rem -2.587rem #0f0f0f1f;
   background: #fcfcfd;
   border-radius: 1.7rem;
 
@@ -43,7 +43,7 @@ const ArrowStyled = styled(Arrow)`
 
 const Divider = styled.div`
   display: flex;
-  border-left: 2px solid #e6e8ec;
+  border-left: 0.2rem solid #e6e8ec;
 `;
 
 type Props = {

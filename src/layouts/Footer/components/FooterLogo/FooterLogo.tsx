@@ -18,12 +18,12 @@ const LogoContainer = styled.div`
 `;
 
 const LogoStyled = styled(Logo)`
-  width: 65px;
-  height: 65px;
+  width: 6.5rem;
+  height: 6.5rem;
 
   @media screen and (max-width: 1024px) {
-    width: 46px;
-    height: 46px;
+    width: 4.6rem;
+    height: 4.6rem;
   }
 `;
 

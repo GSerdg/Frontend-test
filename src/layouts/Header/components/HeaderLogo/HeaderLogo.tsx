@@ -14,17 +14,17 @@ const LogoContainer = styled.div`
 `;
 
 const LogoStyled = styled(Logo)`
-  width: 53px;
-  height: 53px;
+  width: 5.3rem;
+  height: 5.3rem;
 
   @media screen and (max-width: 1024px) {
-    width: 38px;
-    height: 38px;
+    width: 3.8rem;
+    height: 3.8rem;
   }
 
   @media screen and (max-width: 600px) {
-    width: 46px;
-    height: 46px;
+    width: 4.6rem;
+    height: 4.6rem;
   }
 `;
 

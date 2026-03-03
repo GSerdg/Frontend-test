@@ -33,7 +33,7 @@ const FlexWrapper = styled.div`
 const Divider = styled.div`
   display: flex;
   margin-top: 2.5rem;
-  border-bottom: solid 1px;
+  border-bottom: solid 0.1rem;
   border-color: #818181;
 
   @media screen and (max-width: 1024px) {
