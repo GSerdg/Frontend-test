@@ -27,14 +27,3 @@ export async function apiGetCards():Promise<CardsQuery[] | null> {
 
   return null;
 };
-
-export const wait = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms));
-
-export const getTodos = async () => {
-  return new Promise<CardsQuery[] | null>((resolve) => {
-    setTimeout(() => {
-      resolve(MOCK_CARDS_DATA as unknown as CardsQuery[]);
-    }, 150000);
-  });
-};
