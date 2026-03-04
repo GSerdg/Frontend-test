@@ -1,5 +1,4 @@
 import { ROUTES_API } from "@/consts";
-import { MOCK_CARDS_DATA } from "@/features/home/consts";
 
 export type CardsQuery = {
   id: string;
